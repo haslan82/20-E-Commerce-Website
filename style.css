@@ -34,7 +34,7 @@ img{
 
 header{
     position: fixed;
-  
+    background: #F1F1F1;
     width:100%;
     top:0;
     left: 0;
@@ -45,6 +45,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 25px;
+
 }
 #menu-icon{
     font-size: 28px;
@@ -115,4 +116,114 @@ padding: 25px;
     justify-content: center;
     align-items: center;
     font-weight: 500;
+}
+
+.home{
+    position: relative;
+    background:#F2F0F1 ;
+    min-height: 700px;
+}
+section{
+    padding: 64px 0 32px;
+    
+}
+.home-img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+}
+.home-img img{
+    max-width: 700px;
+    width: 100%;
+}
+
+.home-img::before{
+    content:"COLORING STYLE";
+   font-size: 9rem;
+   position: absolute;
+   text-transform: uppercase;
+   font-weight: 900;
+   text-align: center;
+   top: -28px;
+   color: var(--main-color);
+   z-index: -1;
+}
+
+.heading{
+    font-size: 64px;
+    text-align: center;
+    font-weight: 900;
+}
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.product-img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 12px 0 8px;
+}
+.product-price{
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--main-color);
+}
+.add-to-cart{
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.footer{
+    background: var(--main-color);
+    padding: 40px 0;
+}
+
+.footer-c{
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    gap: 16px ;
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h2{
+    font-size: 8rem;
+    color: var(--bg-color);
+    text-transform: uppercase;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+   
+}
+
+.social a {
+    background-color: var(--bg-color);
+    font-size: 20px;
+    padding: 10px;
+    color: var(--main-color);
 }
