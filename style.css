@@ -221,9 +221,27 @@ section{
    
 }
 
-.social a {
+.social .bx {
     background-color: var(--bg-color);
     font-size: 20px;
     padding: 10px;
     color: var(--main-color);
+    border-radius: 50%;
+}
+.footer-box h3{
+    color: var(--bg-color);
+    text-transform: uppercase;
+}
+
+.footer-box a{
+    color: var(--bg-color);
+    text-transform: uppercase;
+    padding-top: 30px;
+}
+
+.copright{
+color: var(--bg-color);
+text-transform: uppercase;
+padding-top: 30px;
+
 }
