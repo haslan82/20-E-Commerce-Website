@@ -1,9 +1,9 @@
 const productList = document.getElementById("productList");
 const cartItemsElement = document.getElementById("cartItems");
-console.log(cartItemsElement);
 
-let cart = [];
 
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+console.log( );
 // Ürünleri ekrana renderlayacak fonksiyon
 
 //Ürünler
@@ -124,14 +124,15 @@ console.log(cart)
       console.log(cart);
     }
   }
+  saveToLocalStorage();
 }
 
 function saveToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function renderCartItems(){
-  console.log("selam");
+/* function renderCartItems(){
+
   cartItemsElement.innerHTML = cart
     .map(
       (item) =>
@@ -157,7 +158,15 @@ function renderCartItems(){
 
     `
     );
+} */
+
+
+
+
+if(window.location.pathname.includes("cart.html")) {
+  renderCartItems();
+} else {
+  renderProducts();
 }
 
 renderProducts();
-renderCartItems();
