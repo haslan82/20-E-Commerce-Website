@@ -1,4 +1,6 @@
 const productList = document.getElementById("productList");
+const cartItemsElement = document.getElementById("cartItems");
+console.log(cartItemsElement);
 
 let cart = [];
 
@@ -93,7 +95,8 @@ function renderProducts() {
   }
 }
 
-renderProducts();
+
+// sepete ekleme işlem
 function addToCart(event) {
   const productID = parseInt(event.target.dataset.id);
   const product = products.find((product) => product.id === productID);
@@ -122,3 +125,39 @@ console.log(cart)
     }
   }
 }
+
+function saveToLocalStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function renderCartItems(){
+  console.log("selam");
+  cartItemsElement.innerHTML = cart
+    .map(
+      (item) =>
+        `
+    <div class="cart-item">
+        <img
+        src="${item.image}"
+        alt="${item.title}"
+        />
+        <div class="cart-item-info">
+        <h2 class="cart-item-title">${item.title}</h2>
+        <input
+            type="number"
+            min="1"
+            value="${item.quantity}"
+            class="cart-item-quantity"
+            data-id="${item.id}"
+        />
+        </div>
+        <h2>$${item.price}</h2>
+        <button class="remove-from-cart" data-id="${item.id}">Remove</button>
+    </div>
+
+    `
+    );
+}
+
+renderProducts();
+renderCartItems();
