@@ -119,6 +119,9 @@ padding: 25px;
     font-weight: 500;
 }
 
+#designer{
+    color: yellow;
+}
 .home{
     position: relative;
     background:#F2F0F1 ;
