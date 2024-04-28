@@ -120,13 +120,15 @@ console.log(cart)
         quantity: 1,
       };
 
+
+
+
       //yeni oluşturduğumuz ürünü cart dizisine ekleriz.
       cart.push(cartItem);
-      console.log(cart);
+      
     }
-  }
-
-// toplam miktarı günceller
+    event.target.textContent = "Added";
+    // toplam miktarı günceller
   updateCartIcon();
 // localstorage güncelledik
   saveToLocalStorage();
@@ -134,6 +136,9 @@ console.log(cart)
 renderCartItems();
 // sepetteki toplam fiyatı günceller
 calculateCartTotal();
+  }
+
+
 
 }
 // Cart dizisinden ve localStoragedan silmek istediğimiz ürünü sildik ve sayfayı güncelledik
@@ -245,15 +250,22 @@ const cartIcon = document.getElementById("cart-icon");
 
 
 function updateCartIcon() {
+  const cartIcon = document.getElementById("cart-icon");
+  const i = document.querySelector(".bx-shopping-bag");
 const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-cartIcon.setAttribute("data-quantity", totalQuantity);
+i.setAttribute("data-quantity", totalQuantity);
 
 
 }
+updateCartIcon();
 
+function updateCartIconOnCartChange(){
+  updateCartIcon();
+}
+
+window.addEventListener("storage", updateCartIconOnCartChange);
 
 
 renderProducts();
 renderCartItems();
 calculateCartTotal();
-updateCartIcon();
