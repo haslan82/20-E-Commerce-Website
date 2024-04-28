@@ -1,7 +1,11 @@
 const productList = document.getElementById("productList");
 const cartItemsElement = document.getElementById("cartItems");
 const cartTotalElement = document.getElementById("cartTotal")
+const menu = document.querySelector(".navbar");
 
+let menuIcon = document.querySelector("#menu-icon");
+
+menuIcon = addEventListener("click", () => menu.classList.toggle("open-menu"));
 
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
