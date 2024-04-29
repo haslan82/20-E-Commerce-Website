@@ -5,11 +5,11 @@ const menu = document.querySelector(".navbar");
 
 let menuIcon = document.querySelector("#menu-icon");
 
-menuIcon = addEventListener("click", () => menu.classList.toggle("open-menu"));
+menuIcon.addEventListener("click", () => menu.classList.toggle("open-menu"));
 
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-console.log( );
+
 // Ürünleri ekrana renderlayacak fonksiyon
 
 //Ürünleri ekrana renderlayacak fonksiyon
@@ -78,18 +78,18 @@ function renderProducts() {
     .map(
       (product) =>
         `
-        <div class="product">
-        <img 
-        src="${product.image}" 
-        class="product-img" alt="">
-    <div class="product-info">
-        <h2 class="${product.title} ">title</h2>
-        <p class="${product.price} ">$50</p>
-        <a class="add-to-cart" data-id="${product.id} ">Add to cart</a>
+    <div class="product">
+        <img
+        src="${product.image}"
+        class="product-img"
+        />
+        <div class="product-info">
+        <h2>${product.title}</h2>
+        <p>$${product.price}</p>
+        <a class="add-to-cart" data-id="${product.id}">Add to cart</a>
+        </div>
     </div>
-    </div>
-        
-        `
+    `
     )
     .join("");
 
